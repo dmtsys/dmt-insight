@@ -1,23 +1,28 @@
 <script>
-	export let connected;
+  import Navbar from './components/Navbar.svelte';
+
+  export let connected;
   export let state;
+
+  $: $state, console.log('change');
 </script>
 
 <main>
+  <Navbar />
   <span class="status" class:ready={$connected}>Connected {$connected ? '✓' : '✖'}</span>
 
-  <div class="state">
-	 {JSON.stringify(Object.keys($state))}
-  </div>
+  <pre class="state">
+	 {JSON.stringify($state, null, 2)}
+  </pre>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    /* text-align: center; */
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
 
   .state {
     margin-top: 10px;
@@ -25,7 +30,7 @@
   }
 
   .status {
-    font-size: 1.0em;
+    font-size: 1em;
     color: var(--dmt-violet);
   }
 
@@ -33,9 +38,9 @@
     color: var(--dmt-green);
   }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
 </style>

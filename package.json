@@ -24,6 +24,7 @@
   "dependencies": {
     "ansi_up": "^4.0.4",
     "connectome": "0.0.83",
+    "mark.js": "^8.11.1",
     "sirv-cli": "^1.0.0"
   }
 }

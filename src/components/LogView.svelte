@@ -1,5 +1,6 @@
 <script>
   import AnsiUp from 'ansi_up';
+  import Mark from 'mark.js';
 
   // This should be the raw data form the state
   export let data;
@@ -9,9 +10,25 @@
   const ansiUp = new AnsiUp();
 
   $: log = data.map(v => ansiUp.ansi_to_html(v.msg)) || [];
+
+  let logContent;
+
+  $: marker = logContent != null ? new Mark(logContent) : undefined;
+
+  $: log, highlightSearchText(search);
+
+  function highlightSearchText(value) {
+    // Always unmark before highlight
+    marker?.unmark();
+
+    // Mark value if truthy
+    if (value) {
+      marker?.mark(value);
+    }
+  }
 </script>
 
-<div class="log-content" class:lineWrap>
+<div class="log-content" class:lineWrap bind:this={logContent}>
   {#each log as msg}
     <div>
       {@html msg}
@@ -24,7 +41,7 @@
     padding: 1rem;
     background-color: black;
     overflow: auto;
-    height: 80vh;
+    height: 70vh;
     white-space: nowrap;
   }
 

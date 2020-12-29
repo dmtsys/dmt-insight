@@ -20,6 +20,7 @@
   --dmt-violet: #873bbf;
   --dmt-violet-dark: #2e1740;
   --dmt-vibrant-green: #5fe02a;
+  --dmt-cool-green-rgb: 93, 246, 153;
   --dmt-cool-green: #5df699;
   --dmt-cool-cyan: #51f5c8;
   --dmt-cool-cyan2: #58e288;
@@ -92,6 +93,30 @@ th {
 td {
   padding: 0.5rem;
   font-size: 0.75rem;
+}
+
+input {
+  position: relative;
+  padding: .625rem 0.75rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+input:hover {
+  background-color: rgba(var(--dmt-cool-green-rgb), 0.2);
+}
+
+input:focus {
+  background-color: rgba(var(--dmt-cool-green-rgb), 0.3);
+}
+
+input[type='search'] {
+  width: var(--search-input-width);
 }
 
 .view-container {

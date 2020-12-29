@@ -1,17 +1,16 @@
 <script>
-  import AnsiUp from 'ansi_up'
   import Navbar from '../components/Navbar.svelte';
   import NearbyDevicesTable from '../components/NearbyDevicesTable.svelte';
   import ConnectionsTable from '../components/ConnectionsTable.svelte';
   import PeerlistTable from '../components/PeerlistTable.svelte';
+  import LogView from '../components/LogView.svelte';
   import RawJsonDialog from './RawJSONDialog.svelte';
   import { hash } from '../stores/hash';
 
   export let state;
 
-  const ansiUp = new AnsiUp()
-
-  $: log = $state.log?.map(v => ansiUp.ansi_to_html(v.msg)) || []
+  let logLineWrap = false;
+  let logSearchText = '';
 </script>
 
 <Navbar />
@@ -42,12 +41,14 @@
   </section>
 
   <section>
-    <h1>Log</h1>
-    <div class="log-content">
-      {#each log as msg}
-        <div>{@html msg}</div>
-      {/each}
+    <div class="log__header">
+      <h1>Log</h1>
+      <div class="log__header__inputs">
+        <label> <input type="checkbox" bind:checked={logLineWrap} /> <span>Wrap lines</span> </label>
+        <div class="search-wrapper"><input type="search" bind:value={logSearchText} placeholder="Search log..." /></div>
+      </div>
     </div>
+    <LogView data={$state.log || []} lineWrap={logLineWrap} search={logSearchText} />
   </section>
 </div>
 
@@ -72,12 +73,25 @@
     flex-grow: 1;
   }
 
-  .log-content {
-    padding: 1rem;
-    background-color: black;
-    overflow: auto;
-    height: 80vh;
-    white-space: nowrap;
+  .log__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .log__header h1 {
+    margin: 0;
+  }
+
+  .log__header__inputs {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .search-wrapper {
+    margin-left: 1.5rem;
   }
 
   @media (min-width: 1024px) {

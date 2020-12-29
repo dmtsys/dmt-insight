@@ -94,7 +94,7 @@ td {
   font-size: 0.75rem;
 }
 
-.container {
+.view-container {
   width: 100%;
   max-width: 920px;
   padding: 0 1rem;

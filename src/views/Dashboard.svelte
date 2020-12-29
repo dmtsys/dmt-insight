@@ -11,7 +11,7 @@
 
 <Navbar />
 
-<div class="container">
+<div class="view-container wrapper">
   <section>
     <h1>Nearby devices</h1>
     <NearbyDevicesTable data={$state.nearbyDevices} />
@@ -38,7 +38,7 @@
 </div>
 
 {#if $hash === '#json'}
-  <RawJsonDialog />
+  <RawJsonDialog data={$state} />
 {/if}
 
 <style>

@@ -3,7 +3,7 @@
   import NavLink from './NavLink.svelte';
 </script>
 
-<nav class="container">
+<nav class="view-container">
   <Logo />
   <NavLink href="#json">Raw JSON</NavLink>
 </nav>

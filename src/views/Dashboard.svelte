@@ -43,10 +43,10 @@
 
 <style>
   section {
-    margin-top: 2.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 2.5rem;
   }
-  
+
   .connections-grid {
     display: flex;
     flex-wrap: nowrap;
@@ -64,11 +64,11 @@
     }
 
     .connections-grid__left {
-      padding-right: 0.5rem;
+      padding-right: 0.75rem;
     }
 
     .connections-grid__right {
-      padding-left: 0.5rem;
+      padding-left: 0.75rem;
     }
   }
 </style>

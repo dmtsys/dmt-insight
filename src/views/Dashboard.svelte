@@ -1,4 +1,5 @@
 <script>
+  import AnsiUp from 'ansi_up'
   import Navbar from '../components/Navbar.svelte';
   import NearbyDevicesTable from '../components/NearbyDevicesTable.svelte';
   import ConnectionsTable from '../components/ConnectionsTable.svelte';
@@ -7,11 +8,15 @@
   import { hash } from '../stores/hash';
 
   export let state;
+
+  const ansiUp = new AnsiUp()
+
+  $: log = $state.log?.map(v => ansiUp.ansi_to_html(v.msg)) || []
 </script>
 
 <Navbar />
 
-<div class="view-container wrapper">
+<div class="view-container">
   <section>
     <h1>Nearby devices</h1>
     <NearbyDevicesTable data={$state.nearbyDevices} />
@@ -35,6 +40,15 @@
     <h1>Peerlist</h1>
     <PeerlistTable data={$state.peerlist} />
   </section>
+
+  <section>
+    <h1>Log</h1>
+    <div class="log-content">
+      {#each log as msg}
+        <div>{@html msg}</div>
+      {/each}
+    </div>
+  </section>
 </div>
 
 {#if $hash === '#json'}
@@ -56,6 +70,14 @@
   .connections-grid__left,
   .connections-grid__right {
     flex-grow: 1;
+  }
+
+  .log-content {
+    padding: 1rem;
+    background-color: black;
+    overflow: auto;
+    height: 80vh;
+    white-space: nowrap;
   }
 
   @media (min-width: 1024px) {

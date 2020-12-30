@@ -27,6 +27,10 @@
         <td>{row.apssid}</td>
         <td title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
       </tr>
+    {:else}
+      <tr>
+        <td class="table-empty-text" colspan="100">No nearby devices found</td>
+      </tr>
     {/each}
   </tbody>
 </table>

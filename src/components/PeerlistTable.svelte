@@ -19,12 +19,16 @@
         <td>{row.connected ? 'ok' : '✖'}</td>
         <td><span>{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
       </tr>
+    {:else}
+      <tr>
+        <td class="table-empty-text" colspan="100">No peers connected</td>
+      </tr>
     {/each}
   </tbody>
 </table>
 
 <style>
   table {
-    max-width: 550px
+    max-width: 550px;
   }
 </style>

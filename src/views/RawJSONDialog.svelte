@@ -1,4 +1,6 @@
 <script>
+  import { scale, fade } from 'svelte/transition';
+  import { backOut, quadIn } from 'svelte/easing';
   import JSONTree from 'svelte-json-tree';
   import ButtonIcon from '../components/ButtonIcon.svelte';
   import { hash } from '../stores/hash';
@@ -11,22 +13,28 @@
   }
 </script>
 
-<div class="dialog-backdrop" on:click={closeDialog}>
-  <div class="dialog" on:click|stopPropagation>
-    <div class="dialog__header">
-      <h1>Raw JSON</h1>
-      <ButtonIcon on:click={closeDialog}>
-        <!-- https://css.gg/close -->
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
-            fill="currentColor"
-          />
-        </svg>
-      </ButtonIcon>
-    </div>
-    <div class="dialog__content">
-      <JSONTree value={data} />
+<div class="dialog-backdrop" transition:fade={{ duration: 150 }} on:click={closeDialog}>
+  <div in:scale={{ start: 0.9, easing: backOut, duration: 200 }} out:scale={{ start: 0.9, easing: quadIn, duration: 150 }} on:click|stopPropagation>
+    <div class="dialog-container">
+      <div class="view-container">
+        <div class="dialog">
+          <div class="dialog__header">
+            <h1>Raw JSON</h1>
+            <ButtonIcon on:click={closeDialog}>
+              <!-- https://css.gg/close -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </ButtonIcon>
+          </div>
+          <div class="dialog__content">
+            <JSONTree value={data} />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -45,17 +53,24 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .dialog {
-    width: 90vw;
+  .dialog-container {
     max-width: calc(920px + 3rem);
     height: 80vh;
-    padding: 1.5rem;
     padding-top: 1rem;
+    padding-bottom: 1.5rem;
     background-color: var(--dmt-magenta);
     border-radius: 0.5rem;
+  }
+
+  .view-container {
+    height: 100%;
+  }
+
+  .dialog {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    height: 100%;
   }
 
   .dialog__header {
@@ -63,7 +78,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .dialog__content {

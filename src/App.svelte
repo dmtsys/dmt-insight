@@ -4,15 +4,13 @@
 
   export let connected;
   export let state;
-
-  $: $state, console.log('change');
 </script>
 
 <main>
   {#if !$connected}
     <Loading />
   {:else}
-    <Dashboard {state} />
+    <Dashboard state={$state} />
   {/if}
 </main>
 

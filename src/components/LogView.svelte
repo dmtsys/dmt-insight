@@ -43,6 +43,7 @@
     overflow: auto;
     height: 70vh;
     white-space: nowrap;
+    border-radius: 0.5rem;
   }
 
   .log-content.lineWrap {

@@ -30,6 +30,12 @@
   --search-input-width: 330px;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -59,7 +65,7 @@ h2 {
   font-size: 1rem;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 a {
@@ -97,7 +103,7 @@ td {
 
 input {
   position: relative;
-  padding: .625rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   background-color: transparent;
   border: none;
   outline: none;

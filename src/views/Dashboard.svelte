@@ -18,7 +18,7 @@
 <div class="view-container">
   <section>
     <h1>Nearby devices</h1>
-    <NearbyDevicesTable data={$state.nearbyDevices} />
+    <NearbyDevicesTable data={state.nearbyDevices} />
   </section>
 
   <section>
@@ -37,7 +37,7 @@
 
   <section>
     <h1>Peerlist</h1>
-    <PeerlistTable data={$state.peerlist} />
+    <PeerlistTable data={state.peerlist} />
   </section>
 
   <section>
@@ -48,12 +48,12 @@
         <div class="search-wrapper"><input type="search" bind:value={logSearchText} placeholder="Search log..." /></div>
       </div>
     </div>
-    <LogView data={$state.log || []} lineWrap={logLineWrap} search={logSearchText} />
+    <LogView data={state.log || []} lineWrap={logLineWrap} search={logSearchText} />
   </section>
 </div>
 
 {#if $hash === '#json'}
-  <RawJsonDialog data={$state} />
+  <RawJsonDialog data={state} />
 {/if}
 
 <style>
@@ -68,9 +68,13 @@
     flex-direction: column;
   }
 
-  .connections-grid__left,
+  .connections-grid__left {
+    flex-grow: 1;
+  }
+
   .connections-grid__right {
     flex-grow: 1;
+    padding-top: 1rem;
   }
 
   .log__header {
@@ -104,6 +108,7 @@
     }
 
     .connections-grid__right {
+      padding-top: 0;
       padding-left: 0.75rem;
     }
   }

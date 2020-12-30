@@ -22,3 +22,9 @@
     {/each}
   </tbody>
 </table>
+
+<style>
+  table {
+    max-width: 550px;
+  }
+</style>

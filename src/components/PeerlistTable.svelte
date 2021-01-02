@@ -16,8 +16,8 @@
       <tr>
         <td>{row.address}</td>
         <td>{row.deviceTag}</td>
-        <td>{row.connected ? 'ok' : '✖'}</td>
-        <td><span>{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
+        <td class="connected" class:ok={row.connected}>{row.connected ? 'ok' : '✖'}</td>
+        <td><span class="version-compare-symbol">{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
       </tr>
     {:else}
       <tr>
@@ -30,5 +30,18 @@
 <style>
   table {
     max-width: 550px;
+  }
+
+  .connected {
+    color: var(--warning);
+    font-weight: bold;
+  }
+
+  .connected.ok {
+    color: var(--dmt-cool-green);
+  }
+
+  .version-compare-symbol {
+    font-weight: bold;
   }
 </style>

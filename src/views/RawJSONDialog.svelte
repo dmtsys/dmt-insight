@@ -7,14 +7,14 @@
 
   export let data = true;
 
+  // Dialog only opens when `#json`
   function closeDialog() {
-    // Dialog only opens when `#json`
     $hash = '';
   }
 </script>
 
-<div class="dialog-backdrop" transition:fade={{ duration: 150 }} on:click={closeDialog}>
-  <div in:scale={{ start: 0.9, easing: backOut, duration: 200 }} out:scale={{ start: 0.9, easing: quadIn, duration: 150 }} on:click|stopPropagation>
+<div class="dialog-backdrop" transition:fade={{ duration: 150 }} on:click|self={closeDialog}>
+  <div in:scale={{ start: 0.9, easing: backOut, duration: 200 }} out:scale={{ start: 0.9, easing: quadIn, duration: 150 }}>
     <div class="dialog-container">
       <div class="view-container">
         <div class="dialog">
@@ -45,8 +45,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -3,7 +3,7 @@
 <style>
   .dmt {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--dmt-cool-green);
   }
 

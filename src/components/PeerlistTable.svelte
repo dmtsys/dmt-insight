@@ -16,7 +16,7 @@
       <tr>
         <td>{row.address}</td>
         <td>{row.deviceTag}</td>
-        <td class="connected" class:ok={row.connected}>{row.connected ? 'ok' : '✖'}</td>
+        <td class="connected" class:ok={row.connected}>{row.connected ? 'YES' : '✖'}</td>
         <td><span class="version-compare-symbol">{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
       </tr>
     {:else}

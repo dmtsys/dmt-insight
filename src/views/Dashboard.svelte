@@ -25,22 +25,30 @@
   </section>
 
   <section>
-    <h1>Connections</h1>
+    <h1>Peerlist</h1>
+    <h2>Nodes this device is following</h2>
+    <PeerlistTable data={state.peerlist} />
+  </section>
+
+  <section>
+    <h1>Outgoing Connections</h1>
     <div class="connections-grid">
       <div class="connections-grid__left">
-        <h2>Outgoing</h2>
-        <ConnectionsTable data={[]} />
-      </div>
-      <div class="connections-grid__right">
-        <h2>Incoming</h2>
-        <ConnectionsTable data={[]} />
+        <!-- <h2>Outgoing</h2> -->
+        <ConnectionsTable data={state.connectionsOut} />
       </div>
     </div>
   </section>
 
   <section>
-    <h1>Peerlist</h1>
-    <PeerlistTable data={state.peerlist} />
+    <h1>Incoming Connections</h1>
+    <div class="connections-grid">
+      <div class="connections-grid__left">
+      <!-- <div class="connections-grid__right"> -->
+        <!-- <h2>Incoming</h2> -->
+        <ConnectionsTable data={state.connectionsIn} />
+      </div>
+    </div>
   </section>
 
   <!-- <section>
@@ -63,6 +71,14 @@
   section {
     margin-top: 0.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    color: var(--dmt-silver);
+  }
+
+  .view-container {
+    padding-bottom: 10px; /* 💡 this behaves weirdly, value does not have the effect, always the same distance... we need something here otherwise the last table is touching the site bottom */
   }
 
   .connections-grid {

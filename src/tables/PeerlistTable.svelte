@@ -16,8 +16,10 @@
       <tr>
         <td>{row.address}</td>
         <td class="device_tag">{row.deviceTag}</td>
-        <td class="connected" class:ok={row.connected}>{row.connected ? 'YES' : '✖'}</td>
-        <td class="dmt_version"><span class="version-compare-symbol">{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
+        <td class="connected" class:yes={row.ready}>{row.ready ? 'YES' : '✖'}</td>
+        {#if row.peerState}
+          <td class="dmt_version"><span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.peerState.dmtVersion}</td>
+        {/if}
       </tr>
     {:else}
       <tr>
@@ -37,19 +39,23 @@
     font-weight: bold;
   }
 
-  .connected.ok {
+  .connected.yes {
     color: var(--dmt-cool-green);
   }
 
-  .version-compare-symbol {
-    font-weight: bold;
-  }
-
-  .device_tag, .dmt_version {
+  .device_tag {
     color: var(--dmt-cool-cyan);
   }
 
   .dmt_version {
+    color: var(--dmt-silver);
     font-size: 0.7rem;
+  }
+
+  .dmt_version span {
+    /*font-weight: bold;*/
+    color: var(--dmt-cool-cyan);
+    display: inline-block;
+    width: 10px;
   }
 </style>

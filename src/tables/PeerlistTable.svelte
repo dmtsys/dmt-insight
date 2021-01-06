@@ -15,9 +15,9 @@
     {#each data as row}
       <tr>
         <td>{row.address}</td>
-        <td>{row.deviceTag}</td>
+        <td class="device_tag">{row.deviceTag}</td>
         <td class="connected" class:ok={row.connected}>{row.connected ? 'YES' : '✖'}</td>
-        <td><span class="version-compare-symbol">{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
+        <td class="dmt_version"><span class="version-compare-symbol">{row.versionCompareSymbol}</span> <span>{row.peerState.dmtVersion}</span></td>
       </tr>
     {:else}
       <tr>
@@ -43,5 +43,13 @@
 
   .version-compare-symbol {
     font-weight: bold;
+  }
+
+  .device_tag, .dmt_version {
+    color: var(--dmt-cool-cyan);
+  }
+
+  .dmt_version {
+    font-size: 0.7rem;
   }
 </style>

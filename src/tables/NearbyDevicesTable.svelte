@@ -17,15 +17,20 @@
   </thead>
   <tbody>
     {#each data as row}
-      <tr>
-        <td>{row.deviceName}</td>
-        <td>{row.dmtVersion}</td>
-        <td>{row.ip}</td>
-        <td>{row.platform}</td>
-        <td>{row.uptime}</td>
-        <td>{row.username}</td>
-        <td>{row.apssid ? row.apssid : '/'}</td>
-        <td title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
+      <tr class:stale={row.stale}>
+        <td class="device_name">
+          {#if row.thisDevice}
+            <span>this</span>
+          {/if}
+          {row.deviceName}
+        </td>
+        <td class="dmt_version"><span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.dmtVersion}</td>
+        <td class="device_ip">{row.ip}</td>
+        <td class="platform">{row.platform}</td>
+        <td class="uptime">{row.uptime}</td>
+        <td class="user">{row.username}</td>
+        <td class="apssid">{row.apssid ? row.apssid : '/'}</td>
+        <td class="device_key" title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
       </tr>
     {:else}
       <tr>
@@ -34,3 +39,47 @@
     {/each}
   </tbody>
 </table>
+
+<style>
+  table tr.stale td {
+    color: #777;
+  }
+
+  .device_name {
+    color: var(--dmt-cool-cyan);
+    font-weight: bold;
+  }
+
+  .device_name span {
+    font-weight: normal;
+    /*background-color: var(--dmt-silver);*/
+    background-color: var(--dmt-cool-cyan);
+    font-size: 0.7rem;
+    color: #222;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  .dmt_version {
+    color: var(--dmt-silver);
+    font-size: 0.7rem;
+  }
+
+  .dmt_version span {
+    color: var(--dmt-cool-cyan);
+    display: inline-block;
+    width: 10px;
+  }
+
+  .device_ip, .user {
+    color: var(--dmt-cool-green);
+  }
+
+  .platform, .apssid {
+    color: var(--dmt-silver);
+  }
+
+  .device_key {
+    color: var(--dmt-yellow);
+  }
+</style>

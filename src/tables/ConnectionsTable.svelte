@@ -17,7 +17,7 @@
         <td>{row.address}</td>
         <td>{row.protocol}</td>
         <td>{row.lane}</td>
-        <td title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
+        <td class="device_key" title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
       </tr>
     {:else}
       <tr>
@@ -30,5 +30,9 @@
 <style>
   table {
     max-width: 550px;
+  }
+
+  .device_key {
+    color: var(--dmt-yellow);
   }
 </style>

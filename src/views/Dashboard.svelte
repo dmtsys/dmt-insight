@@ -43,7 +43,7 @@
     <PeerlistTable data={state.peerlist} />
   </section>
 
-  <section>
+  <!-- <section>
     <div class="log__header">
       <h1>Log</h1>
       <div class="log__header__inputs">
@@ -52,7 +52,7 @@
       </div>
     </div>
     <LogView data={state.log || []} lineWrap={logLineWrap} search={logSearchText} />
-  </section>
+  </section> -->
 </div>
 
 {#if $hash === '#json'}

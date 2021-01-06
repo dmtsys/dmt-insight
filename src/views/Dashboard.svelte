@@ -1,10 +1,13 @@
 <script>
   import Navbar from '../components/Navbar.svelte';
-  import NearbyDevicesTable from '../components/NearbyDevicesTable.svelte';
-  import ConnectionsTable from '../components/ConnectionsTable.svelte';
-  import PeerlistTable from '../components/PeerlistTable.svelte';
-  import LogView from '../components/LogView.svelte';
+
+  import LogView from './LogView.svelte';
   import RawJsonDialog from './RawJSONDialog.svelte';
+
+  import NearbyDevicesTable from '../tables/NearbyDevicesTable.svelte';
+  import ConnectionsTable from '../tables/ConnectionsTable.svelte';
+  import PeerlistTable from '../tables/PeerlistTable.svelte';
+
   import { hash } from '../stores/hash';
 
   export let state;

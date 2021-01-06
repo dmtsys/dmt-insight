@@ -17,7 +17,13 @@ Navigate to [localhost:5000](http://localhost:5000). You should see your app run
 
 ## dmt-proc
 
-You have to have `dmt-proc` running on localhost as well. This frontend will connect to it and display process information.
+You have to have [dmt-proc](https://github.com/uniqpath/dmt) running on localhost as well.
+
+This frontend will connect to it and display process information.
+
+Note: `dmt-insight` stable version is already bundled with DMT ENGINE `(~/.dmt/apps/insight)`.
+
+**This repository is only for developers, not users.**
 
 ## Technical
 

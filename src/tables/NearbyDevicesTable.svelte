@@ -24,7 +24,7 @@
         <td>{row.platform}</td>
         <td>{row.uptime}</td>
         <td>{row.username}</td>
-        <td>{row.apssid}</td>
+        <td>{row.apssid ? row.apssid : '/'}</td>
         <td title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
       </tr>
     {:else}

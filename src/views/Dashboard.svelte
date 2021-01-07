@@ -11,11 +11,20 @@
   import { hash } from '../stores/hash';
 
   export let state;
+  export let errorStore;
 </script>
 
 <Navbar />
 
 <div class="view-container">
+
+  {#if $errorStore.errors.length > 0}
+    <h1>JS Errors</h1>
+    <section>
+      {JSON.stringify($errorStore.errors, null, 2)}
+    </section>
+  {/if}
+
   <section>
     <h1>Nearby devices</h1>
     <NearbyDevicesTable data={state.nearbyDevices} />

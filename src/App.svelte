@@ -4,13 +4,14 @@
 
   export let connected;
   export let state;
+  export let errorStore;
 </script>
 
 <main>
   {#if !$connected}
     <Loading />
   {:else}
-    <Dashboard state={$state} />
+    <Dashboard state={$state} {errorStore} />
   {/if}
 </main>
 

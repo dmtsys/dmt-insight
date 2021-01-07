@@ -6,8 +6,10 @@
 
 <style>
   a {
+    display: inline-block;
     position: relative;
     padding: 0.8rem 1rem;
+    margin-right: 0.5rem;
     color: var(--dmt-cool-green);
     font-weight: 600;
     background-color: rgba(var(--dmt-cool-green-rgb), 0.15);

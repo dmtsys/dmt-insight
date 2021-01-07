@@ -5,7 +5,10 @@
 
 <nav class="view-container">
   <Logo />
-  <NavLink href="#json">Raw JSON</NavLink>
+  <div>
+    <NavLink href="#log">Device Log</NavLink>
+    <NavLink href="#json">Raw JSON</NavLink>
+  </div>
 </nav>
 
 <style>

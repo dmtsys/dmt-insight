@@ -23,19 +23,18 @@
 
   <section>
     <h1>Peerlist</h1>
-    <h2>Nodes this device is following</h2>
+    <h2>[ permanent outgoing connections · using dmt/fiber protocol ]</h2>
     <PeerlistTable data={state.peerlist} />
   </section>
 
-  <section>
+  <!-- <section>
     <h1>Outgoing Connections</h1>
     <div class="connections-grid">
       <div class="connections-grid__left">
-        <!-- <h2>Outgoing</h2> -->
         <ConnectionsTable data={state.connectionsOut} />
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section>
     <h1>Incoming Connections</h1>
@@ -63,6 +62,7 @@
 
   h2 {
     color: var(--dmt-silver);
+    font-size: 0.8rem;
   }
 
   .view-container {

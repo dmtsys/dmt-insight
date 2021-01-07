@@ -1,12 +1,20 @@
 <script>
+  import { onMount } from 'svelte';
   import JSONTree from 'svelte-json-tree';
   import Dialog from '../components/Dialog.svelte';
 
   export let data = true;
+
+  let wrapper;
+
+  onMount(() => {
+    // Open one-level of the JSON tree component
+    wrapper.querySelector('.container').click();
+  });
 </script>
 
 <Dialog title="Raw JSON" on:close>
-  <div class="json-tree-wrapper">
+  <div bind:this={wrapper} class="json-tree-wrapper">
     <JSONTree value={data} />
   </div>
 </Dialog>

@@ -5,25 +5,25 @@
 <table>
   <thead>
     <tr>
+      <th>Peer</th>
       <th>Address</th>
-      <th>Device tag</th>
-      <th>Connected</th>
+      <th>Operational</th>
       <th>DMT version</th>
     </tr>
   </thead>
   <tbody>
     {#each data as row}
       <tr>
-        <td>{row.address}</td>
         <td class="device_tag">{row.deviceTag}</td>
-        <td class="connected" class:yes={row.ready}>{row.ready ? 'YES' : '✖'}</td>
+        <td>{row.address}</td>
+        <td class="operational" class:yes={row.operational}>{row.operational ? 'YES' : '✖'}</td>
         {#if row.peerState}
           <td class="dmt_version"><span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.peerState.dmtVersion}</td>
         {/if}
       </tr>
     {:else}
       <tr>
-        <td class="table-empty-text" colspan="100">No peers connected</td>
+        <td class="table-empty-text" colspan="100">No peers</td>
       </tr>
     {/each}
   </tbody>
@@ -31,15 +31,15 @@
 
 <style>
   table {
-    max-width: 550px;
+    max-width: 600px;
   }
 
-  .connected {
+  .operational {
     color: var(--warning);
     font-weight: bold;
   }
 
-  .connected.yes {
+  .operational.yes {
     color: var(--dmt-cool-green);
   }
 

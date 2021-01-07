@@ -7,7 +7,7 @@
     <tr>
       <th>Address</th>
       <!-- <th>Device tag</th> -->
-      <th>Connected</th>
+      <th>Operational</th>
       <th>Protocol</th>
       <th>Lane</th>
       <th>Remote device key</th>
@@ -18,7 +18,7 @@
       <tr>
         <td>{row.address}</td>
         <!-- <td class="device_tag">{row.deviceTag}</td> -->
-        <td class="connected" class:yes={row.ready}>{row.ready ? 'YES' : '✖'}</td>
+        <td class="operational" class:yes={row.operational}>{row.operational ? 'YES' : '✖'}</td>
         <td class="protocol">{row.protocol}</td>
         <td class="lane">{row.lane}</td>
         <td class="device_key" title={row.remotePubkeyHex}>{row.remotePubkeyHex.substring(0, 8)}...</td>
@@ -36,12 +36,12 @@
     max-width: 700px;
   }
 
-  .connected {
+  .operational {
     color: var(--warning);
     font-weight: bold;
   }
 
-  .connected.yes {
+  .operational.yes {
     color: var(--dmt-cool-green);
   }
 

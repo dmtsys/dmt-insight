@@ -21,7 +21,11 @@
         <td class="operational" class:yes={row.operational}>{row.operational ? 'YES' : '✖'}</td>
         <td class="protocol">{row.protocol}</td>
         <td class="lane">{row.lane}</td>
-        <td class="device_key" title={row.remotePubkeyHex}>{row.remotePubkeyHex.substring(0, 8)}...</td>
+        <td class="device_key" title={row.remotePubkeyHex}>
+          {#if row.remotePubkeyHex}
+            {row.remotePubkeyHex.substring(0, 8)}...
+          {/if}
+        </td>
       </tr>
     {:else}
       <tr>

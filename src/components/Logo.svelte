@@ -4,7 +4,8 @@
   .dmt {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--dmt-cool-green);
+    /*color: var(--dmt-cool-green);*/
+    color: var(--dmt-cool-cyan);
   }
 
   .insight {

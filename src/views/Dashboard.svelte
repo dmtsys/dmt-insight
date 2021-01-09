@@ -23,7 +23,7 @@
 
   <section>
     <h1>Peerlist</h1>
-    <h2>[ following · permanent outgoing ws connections · using dmt/fiber protocol · port 7780]</h2>
+    <h2>[ following · permanent outgoing ws connections · using dmt/fiber protocol · port 7780 ]</h2>
     <PeerlistTable data={state.peerlist} />
   </section>
 

@@ -4,6 +4,14 @@
 
   export let connected;
   export let state;
+
+  $: device = $state.device;
+
+  state.subscribe(({ device }) => {
+    if(device && device.deviceName) {
+      document.title = `${device.deviceName} — DMT Insight`;
+    }
+  });
 </script>
 
 <main>

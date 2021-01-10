@@ -9,7 +9,7 @@
 
 <div use:clickOutside class="wrapper" on:clickoutside={() => (showPopup = false)}>
   <button class:active={showPopup} title="Device info" on:click={() => (showPopup = !showPopup)}>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M13 16H11V18H13V16Z" fill="currentColor" />
       <path
         fill-rule="evenodd"
@@ -38,7 +38,7 @@
   button {
     outline: none;
     border: none;
-    padding: 0.6rem;
+    padding: 0.8rem;
     font-weight: 600;
     border-radius: 50%;
     color: var(--dmt-cool-cyan);
@@ -53,6 +53,10 @@
   button.active,
   button:focus {
     background-color: rgba(var(--dmt-cool-cyan-rgb), 0.25);
+  }
+
+  svg {
+    display: block;
   }
 
   .popup {

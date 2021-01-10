@@ -13,7 +13,7 @@
   export let state;
 </script>
 
-<Navbar />
+<Navbar deviceData={state.device} />
 
 <div class="view-container">
   <section>

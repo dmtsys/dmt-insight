@@ -31,8 +31,8 @@
   --search-input-width: 330px;
 
   /* NEW */
-  --dmt-silver: #99B1BA;
-  --dmt-yellow: #DFDB83;
+  --dmt-silver: #99b1ba;
+  --dmt-yellow: #dfdb83;
 }
 
 /* Font from: https://google-webfonts-helper.herokuapp.com/fonts/nunito-sans?subsets=latin */
@@ -186,6 +186,10 @@ a {
 
 a:hover {
   color: var(--dmt-cyan);
+}
+
+button {
+  cursor: pointer;
 }
 
 table {

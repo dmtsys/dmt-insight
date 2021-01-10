@@ -17,9 +17,14 @@
         <td class="device_tag">{row.deviceTag}</td>
         <td>{row.address}</td>
         <td class="operational" class:yes={row.operational}>{row.operational ? 'YES' : '✖'}</td>
-        {#if row.peerState}
-          <td class="dmt_version"><span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.peerState.dmtVersion}</td>
-        {/if}
+
+        <td class="dmt_version">
+          {#if row.peerState}
+            <span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.peerState.dmtVersion}
+          {:else}
+            <span></span> unknown
+          {/if}
+        </td>
       </tr>
     {:else}
       <tr>

@@ -2,6 +2,8 @@
   import Logo from './Logo.svelte';
   import NavLink from './NavLink.svelte';
   import DeviceInfo from './DeviceInfo.svelte';
+
+  export let deviceData = {};
 </script>
 
 <nav class="view-container">
@@ -9,7 +11,7 @@
   <div>
     <NavLink href="#log">Device Log</NavLink>
     <NavLink href="#json">Raw JSON</NavLink>
-    <DeviceInfo deviceData={{}} />
+    <DeviceInfo {deviceData} />
   </div>
 </nav>
 

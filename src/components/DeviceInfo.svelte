@@ -8,7 +8,7 @@
 </script>
 
 <div use:clickOutside class="wrapper" on:clickoutside={() => (showPopup = false)}>
-  <button class:active={showPopup} on:click={() => (showPopup = !showPopup)}>
+  <button class:active={showPopup} title="Device info" on:click={() => (showPopup = !showPopup)}>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M13 16H11V18H13V16Z" fill="currentColor" />
       <path
@@ -21,6 +21,7 @@
   </button>
   {#if showPopup}
     <div transition:fly={{ duration: 200, y: 5 }} class="popup">
+      <h1>Device info</h1>
       <DeviceTable data={deviceData} />
     </div>
   {/if}

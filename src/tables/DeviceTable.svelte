@@ -2,7 +2,7 @@
   export let data;
 </script>
 
-<table>
+<table class="vertical">
   <tbody>
     <tr>
       <th>Name</th>
@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th>AP Mode</th>
-      <td>{data.apMode}</td>
+      <td class="ap_mode" class:yes={data.apMode}>{data.apMode}</td>
     </tr>
     <tr>
       <th>Device key</th>
@@ -39,7 +39,8 @@
 
 <style>
   table {
-    max-width: 600px;
+    max-width: 300px;
+    white-space: nowrap;
   }
 
   .device_name {
@@ -58,6 +59,15 @@
 
   .platform {
     color: var(--dmt-silver);
+  }
+
+  .ap_mode {
+    color: var(--warning);
+    font-weight: bold;
+  }
+
+  .ap_mode.yes {
+    color: var(--dmt-cool-green);
   }
 
   .device_key {

@@ -197,16 +197,13 @@ table {
   width: 100%;
   text-align: left;
   border-collapse: collapse;
+  border-top: 1px solid #aaa;
   /*border-radius-bottom-left: 10px;
   border-radius-bottom-right: 10px;*/
 }
 
 thead {
   background-color: rgba(255, 255, 255, 0.15);
-}
-
-tr:first-child {
-  border-top: 1px solid #aaa;
 }
 
 th {
@@ -226,6 +223,20 @@ tr:first-child td {
 
 tr:last-child td {
   padding-bottom: 0.5rem;
+}
+
+table.vertical {
+  border-top: none;
+  border-left: 1px solid #aaa;
+}
+
+table.vertical th {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding-right: 1rem;
+}
+
+table.vertical td {
+  padding-left: 1rem;
 }
 
 input {

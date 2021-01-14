@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import copy from 'rollup-plugin-copy';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
@@ -57,6 +58,10 @@ export default {
       dedupe: ['svelte']
     }),
     commonjs(),
+
+    copy({
+      targets: [{ src: './node_modules/dmt-frontend-components/src/assets', dest: 'public/build' }]
+    }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated

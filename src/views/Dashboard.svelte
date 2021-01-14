@@ -48,11 +48,8 @@
   </section>
 </div>
 
-{#if $hash === '#log'}
-  <DeviceLogDialog data={state.log || []} on:close={() => ($hash = '')} />
-{:else if $hash === '#json'}
-  <RawJsonDialog data={state} on:close={() => ($hash = '')} />
-{/if}
+<DeviceLogDialog show={$hash === '#log'} data={state.log || []} on:close={() => ($hash = '')} />
+<RawJsonDialog show={$hash === '#json'} data={state} on:close={() => ($hash = '')} />
 
 <style>
   section {

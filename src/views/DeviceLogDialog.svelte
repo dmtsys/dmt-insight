@@ -1,9 +1,10 @@
 <script>
+  import { Dialog } from 'dmt-frontend-components';
   import AnsiUp from 'ansi_up';
   import Mark from 'mark.js';
-  import Dialog from '../components/Dialog.svelte';
 
-  // This should be the raw data from the state
+  export let show;
+  // Device log data
   export let data;
 
   let lineWrap = false;
@@ -30,7 +31,7 @@
   }
 </script>
 
-<Dialog title="Device Log" on:close>
+<Dialog bind:show title="Device Log" on:close>
   <div class="log">
     <div class="log__header">
       <label> <input type="checkbox" bind:checked={lineWrap} /> <span>Wrap lines</span> </label>

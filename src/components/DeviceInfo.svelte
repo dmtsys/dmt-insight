@@ -10,7 +10,7 @@
 </script>
 
 <div use:clickOutside class="wrapper" on:clickoutside={() => (showPopup = false)}>
-  <Button icon size="lg" type="primary" title="Device info" on:click={() => (showPopup = !showPopup)}>
+  <Button icon size="lg" variant="primary" title="Device info" on:click={() => (showPopup = !showPopup)}>
     <DeviceIcon />
   </Button>
   {#if showPopup}

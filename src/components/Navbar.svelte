@@ -10,10 +10,10 @@
   <Logo />
   <div class="links">
     <div>
-      <Button href="#log" size="lg" type="primary">Device Log</Button>
+      <Button href="#log" size="lg" variant="primary">Device Log</Button>
     </div>
     <div>
-      <Button href="#json" size="lg" type="primary">Raw JSON</Button>
+      <Button href="#json" size="lg" variant="primary">Raw JSON</Button>
     </div>
     <div>
       <DeviceInfo {deviceData} />

@@ -14,7 +14,7 @@
   }
 </script>
 
-<Dialog bind:show title="Raw JSON" on:close>
+<Dialog bind:show title="Raw JSON" large on:close>
   <div bind:this={wrapper} class="json-tree-wrapper">
     <JSONTree value={data} />
   </div>

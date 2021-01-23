@@ -31,7 +31,7 @@
   }
 </script>
 
-<Dialog bind:show title="Device Log" on:close>
+<Dialog bind:show title="Device Log" large on:close>
   <div class="log">
     <div class="log__header">
       <label> <input type="checkbox" bind:checked={lineWrap} /> <span>Wrap lines</span> </label>

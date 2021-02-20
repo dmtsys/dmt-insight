@@ -27,14 +27,14 @@
     <PeerlistTable data={state.peerlist} />
   </section>
 
-  <!-- <section>
+  <section>
     <h1>Outgoing Connections</h1>
     <div class="connections-grid">
       <div class="connections-grid__left">
         <ConnectionsTable data={state.connectionsOut} />
       </div>
     </div>
-  </section> -->
+  </section>
 
   <section>
     <h1>Incoming Connections</h1>

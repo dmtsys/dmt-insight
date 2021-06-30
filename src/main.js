@@ -1,3 +1,5 @@
+import './assets/css/global.css';
+
 import App from './App.svelte';
 
 import { makeConnectedStore } from 'connectome/stores';

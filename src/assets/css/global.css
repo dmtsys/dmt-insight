@@ -1,41 +1,8 @@
+/* this file is copied manually from dmt-frontend-components */
+
 :root {
-  /* Colors */
-  --dmt-navy: #41468f;
-  --dmt-magenta: #2b294c;
-  --dmt-cyan: #3effe5;
-  --dmt-green: #00ffbd;
-  --dmt-violet: #986aeb; /* maybe a better violet than in dmt-gui, check and replace there! */
-
-  /* From: https://github.com/uniqpath/dmt/blob/main/core/node/aspect-apps/search/front/src/App.svelte#L371-L393 */
-  --warning: #e34042;
-  --dmt-red: #e34042;
-  --dmt-warning-pink: #efcaf8;
-  --dmt-orange: #e5ae34;
-  --dmt-navy: #41468f;
-  /*--dmt-navy: #199EFF;
-  --dmt-navy: #199EFF;*/
-  --dmt-navy2: #292c5a;
-  --dmt-cyan: #29b3bf;
-  /*--dmt-bright-cyan-prev: #3EFFE5;*/
-  --dmt-bright-cyan: #3dffec;
-  --dmt-violet: #873bbf;
-  --dmt-violet-dark: #2e1740;
-  --dmt-vibrant-green: #5fe02a;
-  --dmt-cool-green-rgb: 93, 246, 153;
-  --dmt-cool-green: #5df699;
-  --dmt-cool-cyan: #51f5c8;
-  --dmt-cool-cyan-rgb: 81, 245, 200;
-  --dmt-cool-cyan2: #58e288;
-  --zeta-green: #31e5c1;
-  --zeta-green-highlight: #34fed7;
-  --zeta-green_check: #32e6be;
-  --search-input-width: 330px;
-
-  /* NEW */
-  --dmt-silver: #99b1ba;
-  --dmt-yellow: #dfdb83;
-
   /* Numbers */
+  --search-input-width: 330px;
   --container-max-width: 920px;
 }
 

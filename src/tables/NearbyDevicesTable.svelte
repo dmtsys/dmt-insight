@@ -9,6 +9,7 @@
       <th>DMT version</th>
       <th>Local IP</th>
       <th>Platform</th>
+      <th>Node.js</th>
       <th>Uptime</th>
       <th>User</th>
       <th>AP SSID</th>
@@ -27,6 +28,7 @@
         <td class="dmt_version"><span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.dmtVersion}</td>
         <td class="device_ip">{row.ip}</td>
         <td class="platform">{row.platform}</td>
+        <td class="nodejs_version">{row.nodejsVersion}</td>
         <td class="uptime">{row.uptime}</td>
         <td class="user">{row.username}</td>
         <td class="apssid">{row.apssid ? row.apssid : '/'}</td>
@@ -60,7 +62,7 @@
     padding: 0 2px;
   }
 
-  .dmt_version {
+  .dmt_version, .nodejs_version {
     color: var(--dmt-silver);
     font-size: 0.7rem;
   }

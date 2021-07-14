@@ -2,7 +2,7 @@
   import Navbar from '../components/Navbar.svelte';
 
   import DeviceLogDialog from './DeviceLogDialog.svelte';
-  import RawJsonDialog from './RawJSONDialog.svelte';
+  import ProcessStateDialog from './ProcessStateDialog.svelte';
 
   import NearbyDevicesTable from '../tables/NearbyDevicesTable.svelte';
   import ConnectionsTable from '../tables/ConnectionsTable.svelte';
@@ -49,7 +49,7 @@
 </div>
 
 <DeviceLogDialog show={$hash === '#log'} data={state.log || []} on:close={() => ($hash = '')} />
-<RawJsonDialog show={$hash === '#json'} data={state} on:close={() => ($hash = '')} />
+<ProcessStateDialog show={$hash === '#json'} data={state} on:close={() => ($hash = '')} />
 
 <style>
   section {

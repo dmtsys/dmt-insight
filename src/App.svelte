@@ -1,4 +1,6 @@
 <script>
+  import { Colors } from 'dmt-frontend-components';
+
   import Loading from './views/Loading.svelte';
   import Dashboard from './views/Dashboard.svelte';
 

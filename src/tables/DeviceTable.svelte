@@ -25,6 +25,10 @@
       <td class="platform">{data.platform}</td>
     </tr>
     <tr>
+      <th>Node.js</th>
+      <td class="version">{data.nodejsVersion}</td>
+    </tr>
+    <tr>
       <th>AP Mode</th>
       <td class="ap_mode" class:yes={data.apMode}>{data.apMode}</td>
     </tr>

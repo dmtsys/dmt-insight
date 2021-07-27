@@ -1,0 +1,23 @@
+anyass — 07/22/2021
+the problem is here
+  .json-tree-wrapper .container {
+    transform: translate(calc(0px - var(--li-identation)),-50%);
+  }
+
+the vite compiler removes the px after the 0
+.json-tree-wrapper .container {
+    transform: translate(calc(0 - var(--li-identation)),-50%);
+  }
+
+here's one solution
+
+add this to vite config
+  build: {
+    cleanCssOptions: {
+      level: 0
+    }
+  }
+
+https://github.com/clean-css/clean-css#optimization-levels
+
+the issue is with clean-css but can modify the options to match one's needs

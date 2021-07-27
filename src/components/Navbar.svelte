@@ -1,13 +1,12 @@
 <script>
-  import { Button } from 'dmt-frontend-components';
-  import Logo from './Logo.svelte';
+  import { Button, Logo } from 'dmt-frontend-components';
   import DeviceInfo from './DeviceInfo.svelte';
 
   export let deviceData = {};
 </script>
 
 <nav class="view-container">
-  <Logo />
+  <Logo dmtApp="Insight" />
   <div class="links">
     <div>
       <Button href="#log" size="lg" variant="primary">Device Log</Button>

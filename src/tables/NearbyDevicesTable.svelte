@@ -26,12 +26,12 @@
           {row.deviceName}
         </td>
         <td class="dmt_version"><span>{row.versionCompareSymbol ? row.versionCompareSymbol : ''}</span> {row.dmtVersion}</td>
-        <td class="device_ip">{row.ip}</td>
+        <td class="device_ip">{row.ip || '/'}</td>
         <td class="platform">{row.platform}</td>
         <td class="nodejs_version">{row.nodejsVersion}</td>
         <td class="uptime">{row.uptime}</td>
         <td class="user">{row.username}</td>
-        <td class="apssid">{row.apssid ? row.apssid : '/'}</td>
+        <td class="wifiAP" title={row.wifiAP || row.apssid || '/'}>{row.apssid || '/'}</td>
         <td class="device_key" title={row.deviceKey}>{row.deviceKey.substring(0, 8)}...</td>
       </tr>
     {:else}
@@ -77,8 +77,12 @@
     color: var(--dmt-cool-green);
   }
 
-  .platform, .apssid {
+  .platform, .wifiAP {
     color: var(--dmt-silver);
+  }
+
+  .wifiAP {
+    cursor: help;
   }
 
   .device_key {

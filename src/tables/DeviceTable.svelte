@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <th>Local IP</th>
-      <td class="device_ip">{data.ip}</td>
+      <td class="device_ip">{data.ip || '/'}</td>
     </tr>
     <tr>
       <th>Platform</th>
@@ -27,6 +27,10 @@
     <tr>
       <th>Node.js</th>
       <td class="version">{data.nodejsVersion}</td>
+    </tr>
+    <tr>
+      <th>Wifi AP</th>
+      <td class="wifi_ap">{data.wifiAP || data.apssid || '/'}</td>
     </tr>
     <tr>
       <th>AP Mode</th>
@@ -61,7 +65,7 @@
     color: var(--dmt-cool-green);
   }
 
-  .platform {
+  .platform, .wifi_ap {
     color: var(--dmt-silver);
   }
 

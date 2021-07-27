@@ -9,7 +9,7 @@ const port = 7780;
 const protocol = 'dmt';
 const lane = 'gui';
 
-const { connected, state } = new makeConnectedStore({ port, protocol, lane });
+const { connected, state } = makeConnectedStore({ port, protocol, lane });
 
 const app = new App({
   target: document.body,

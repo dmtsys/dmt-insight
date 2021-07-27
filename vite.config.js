@@ -8,6 +8,12 @@ export default defineConfig({
   optimizeDeps: {
     exclude: []
   },
+  // see help/vite-config/padding-bug.txt
+  build: {
+    cleanCssOptions: {
+      level: 0
+    }
+  },
   resolve: {
     alias: {
       '@img': path.resolve('./src/assets/img'),

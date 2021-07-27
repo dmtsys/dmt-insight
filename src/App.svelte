@@ -1,7 +1,7 @@
 <script>
   import { Colors } from 'dmt-frontend-components';
 
-  import Loading from './views/Loading.svelte';
+  import { Loading } from 'dmt-frontend-components';
   import Dashboard from './views/Dashboard.svelte';
 
   export let connected;
@@ -18,7 +18,7 @@
 
 <main>
   {#if !$connected}
-    <Loading />
+    <Loading dmtApp="Insight" />
   {:else}
     <Dashboard state={$state} />
   {/if}
@@ -28,6 +28,5 @@
   main {
     width: 100%;
     height: 100%;
-    /*padding-bottom: 10px;*/
   }
 </style>

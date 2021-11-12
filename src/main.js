@@ -2,20 +2,17 @@ import './assets/css/global.css';
 
 import App from './App.svelte';
 
-import { makeConnectedStore } from 'connectome/stores';
+import { connect } from 'connectome';
 
 const port = 7780;
+const protocol = 'dmt/gui';
 
-const protocol = 'dmt';
-const lane = 'gui';
-
-const { connected, state } = makeConnectedStore({ port, protocol, lane });
+const connector = connect({ port, protocol });
 
 const app = new App({
   target: document.body,
   props: {
-    connected,
-    state
+    connector
   }
 });
 

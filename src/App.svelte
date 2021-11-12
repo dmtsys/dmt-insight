@@ -4,8 +4,11 @@
   import { Loading } from 'dmt-frontend-components';
   import Dashboard from './views/Dashboard.svelte';
 
-  export let connected;
-  export let state;
+  export let connector;
+  // export let connected;
+  // export let state;
+
+  const { connected, state } = connector;
 
   $: device = $state.device;
 
